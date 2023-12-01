@@ -1,0 +1,47 @@
+type Query {
+
+    fetchProductById(id: String): ProductResponse
+
+    fetchProducts(page: Int, limit: Int): ProductPageResponse
+}
+
+type Mutation {
+
+    updateProductPricing(id: String, updateProductPricing: UpdateProductPricingRequest): ProductResponse
+
+    deleteProductById(id: String): String
+}
+
+type ProductPageResponse {
+    currentPage: Int,
+    recordsPerPage: Int,
+    totalPages: Int,
+    totalRecordsCount: Int,
+    records: [ProductResponse]
+}
+
+type ProductResponse {
+    id: String
+    name: String
+    category: ProductCategory
+    unit: ProductUnit
+}
+
+input UpdateProductPricingRequest {
+    purchasingPrice: Int
+    sellingPrice: Int
+}
+
+
+enum ProductCategory {
+    groceries
+    milk
+    meat
+}
+
+enum ProductUnit {
+    kilo_grams
+    grams
+    count
+}
+
