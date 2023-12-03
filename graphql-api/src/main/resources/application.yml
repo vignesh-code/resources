@@ -1,5 +1,5 @@
 spring:
   data:
     mongodb:
-      uri: mongodb+srv://vignesh:b3vdocq9lHFxIQtb@ruchinique-development.q8r8j83.mongodb.net/ruchinique?retryWrites=true&w=majority&readPreference=secondaryPreferred&maxStalenessSeconds=120
+      uri: mongodb://localhost:27017/my_database
 
